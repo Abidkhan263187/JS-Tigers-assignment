@@ -1,4 +1,4 @@
-import { EDIT_DATA, LIST_DATA } from "./actionTypes"
+import { EDIT_DATA, FLAG, LIST_DATA } from "./actionTypes"
 
 export const uploadFormListData=(payload)=>{
 return{
@@ -10,6 +10,13 @@ return{
 export const editObjData=(payload)=>{
     return{
         type:EDIT_DATA,
+        payload
+    }
+}
+
+export const update=(payload)=>{
+    return{
+        type:FLAG,
         payload
     }
 }

@@ -1,8 +1,9 @@
-import { EDIT_DATA, LIST_DATA } from "./actionTypes";
+import { EDIT_DATA, FLAG, LIST_DATA } from "./actionTypes";
 
 const initialValue={
 listArrayData:[],
-editData:{}
+editData:{},
+flag:false
 }
 
 export const reducer=(store=initialValue,action)=>{
@@ -12,6 +13,9 @@ switch(action.type){
    }
    case EDIT_DATA:{
     return{...store,editData:action.payload}
+   }
+   case FLAG:{
+    return {...store,flag:action.payload}
    }
     default:return store;
 }

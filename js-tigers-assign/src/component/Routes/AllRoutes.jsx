@@ -2,6 +2,7 @@ import React from 'react'
 import {Routes,Route} from 'react-router-dom'
 import { Dashboard } from '../pages/Dashboard'
 import { Form } from '../pages/Form'
+import { Login } from '../pages/Login'
 
 export const AllRoutes = () => {
   return (
@@ -9,6 +10,7 @@ export const AllRoutes = () => {
         <Routes>
             <Route path='/' element={<Dashboard/>}/>
             <Route path='/form' element={<Form/>}/>
+            <Route path="/login" element={<Login/>}/>
         </Routes>
     </div>
   )
