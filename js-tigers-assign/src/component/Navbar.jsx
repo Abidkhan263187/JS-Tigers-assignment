@@ -11,7 +11,7 @@ export const Navbar = () => {
   const userName=JSON.parse(sessionStorage.getItem('userName'))
   return (
     <Flex backgroundColor={'black'} color={'white'} fontWeight={'700'} justifyContent={'space-between'}  p={'10px 30px'}>
-     <Box>logo</Box>
+     <Box>JS TIGERS</Box>
      <Flex justifyContent={'space-between'} w={'20%'}>
         <Link to={'/form'}> Form</Link>
         <Link to={'/'}>Home</Link>

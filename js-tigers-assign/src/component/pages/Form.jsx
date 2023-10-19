@@ -7,9 +7,13 @@ import {
   Button,
   Container,
   Box,
+  Heading,
 } from '@chakra-ui/react';
+import { useDispatch } from 'react-redux';
+import { submitForm } from '../redux/api';
 
 export const Form = () => {
+  const dispatch = useDispatch()
   const [formData, setFormData] = useState({
     vendorName: '',
     bankAccountNo: '',
@@ -29,23 +33,27 @@ export const Form = () => {
     });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission, e.g., make an API request to create a vendor
-try {
-  await axios.post(`http://localhost:8000/form`,formData).then(({data})=>{
-    console.log(data)
-  })
-  console.log('Form data submitted:', formData);
-} catch (error) {
-  console.log(error);
-}
-   
-    e.target.reset();
+    dispatch(submitForm(formData))
+    setFormData({
+      vendorName: '',
+      bankAccountNo: '',
+      bankName: '',
+      addressLine1: '',
+      addressLine2: '',
+      city: '',
+      country: '',
+      zipCode: '',
+    })
+
+
   };
 
   return (
     <Container mt={'40px'} maxW="md">
+      <Heading size={'lg'}>Form</Heading>
       <Box p={4} boxShadow="md" rounded="md">
         <form onSubmit={handleSubmit} id="form">
           <FormControl isRequired>
@@ -60,7 +68,7 @@ try {
           <FormControl isRequired>
             <FormLabel>Bank Account No</FormLabel>
             <Input
-              type="text"
+              type="number"
               name="bankAccountNo"
               value={formData.bankAccountNo}
               onChange={handleChange}

@@ -14,6 +14,7 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux';
 import { editInfo } from '../redux/api';
+import { update } from '../redux/action';
 
 export const Edit = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
@@ -46,6 +47,7 @@ export const Edit = ({ isOpen, onClose }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(editInfo(editDataObj));
+        dispatch(update(false))
         onClose();
     };
 
