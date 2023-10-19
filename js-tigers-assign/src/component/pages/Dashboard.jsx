@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Box, Button, ButtonGroup, Flex, Grid, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Text, VStack, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, Grid, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Text, VStack, useDisclosure } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteInfo, editInfo, getListData } from '../redux/api';
@@ -43,6 +43,7 @@ export const Dashboard = () => {
 
     return (
         <>
+        <Heading>Vendors list</Heading>
             <Grid width="80%" margin="5% auto" gridTemplateColumns={["repeat(1,1fr)","repeat(1,1fr)","repeat(2,1fr)","repeat(3,1fr)"]}>
                 {listArrayData.length > 0 && listArrayData.map((elem, ind) => (
                     <Box
