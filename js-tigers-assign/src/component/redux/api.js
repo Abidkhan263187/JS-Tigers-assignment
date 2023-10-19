@@ -4,7 +4,7 @@ import {update, uploadFormListData } from "./action"
 
 export const submitForm=(formData)=>async(dispatc)=>{
     try {
-        await axios.post(`http://localhost:8000/form`,formData).then(({data})=>{
+        await axios.post(`https://jstiger.onrender.com/form`,formData).then(({data})=>{
         //   console.log(data)
           window.location.href="/"
         })
@@ -16,7 +16,7 @@ export const submitForm=(formData)=>async(dispatc)=>{
 
 export const getListData = (pgNo) => async (dispatch) => {
     try {
-        await axios.get(`http://localhost:8000?page=${pgNo}&limit=3`).then(({ data }) => {
+        await axios.get(`https://jstiger.onrender.com?page=${pgNo}&limit=3`).then(({ data }) => {
             // console.log(data.formList)
             dispatch(uploadFormListData(data.formList))
         })
@@ -28,7 +28,7 @@ export const getListData = (pgNo) => async (dispatch) => {
 
 export const deleteInfo = (id) => async (dispatch) => {
     try {
-        await axios.delete(`http://localhost:8000/form/delete/${id}`).then(({ data }) => {
+        await axios.delete(`https://jstiger.onrender.com/form/delete/${id}`).then(({ data }) => {
             dispatch(update(true))
         })
     } catch (error) {
@@ -38,7 +38,7 @@ export const deleteInfo = (id) => async (dispatch) => {
 
 export  const editInfo=(obj)=>async(dispatch)=>{
     try {
-        await axios.patch(`http://localhost:8000/form/edit/${obj._id}`,obj).then(({data})=>{
+        await axios.patch(`https://jstiger.onrender.com/form/edit/${obj._id}`,obj).then(({data})=>{
             // window.location.href="/"
             dispatch(update(true))  
         })
