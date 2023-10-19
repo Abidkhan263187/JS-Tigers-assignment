@@ -33,9 +33,12 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 
 export const Login = () => {
     return (
-      <Box w={'25%'} m={' 10% auto'} borderRadius={"10px"}   boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" p={'50px'} >
+      <Box w={['100%','100%','40%','25%']} m={' 10% auto'} borderRadius={"10px"}   boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" p={'50px'} >
        <Heading size={'md'} m={'20px 0px'}> Login Page</Heading>
-        <GoogleLoginButton/>
+       <Box m={'auto'} textAlign={'center'}>
+       <GoogleLoginButton/>
+       </Box>
+      
         
          
       </Box>

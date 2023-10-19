@@ -43,7 +43,7 @@ export const Dashboard = () => {
 
     return (
         <>
-            <Grid width="80%" margin="5% auto" gridTemplateColumns="repeat(3,1fr)">
+            <Grid width="80%" margin="5% auto" gridTemplateColumns={["repeat(1,1fr)","repeat(1,1fr)","repeat(2,1fr)","repeat(3,1fr)"]}>
                 {listArrayData.length > 0 && listArrayData.map((elem, ind) => (
                     <Box
                         borderWidth="1px"

@@ -9,9 +9,9 @@ export const Navbar = () => {
   }
   const userName=JSON.parse(sessionStorage.getItem('userName'))
   return (
-    <Flex backgroundColor={'black'} color={'white'} fontWeight={'700'} justifyContent={'space-between'}  p={'10px 30px'}>
+    <Flex backgroundColor={'black'} color={'white'} fontWeight={'700'} justifyContent={'space-between'}  p={["10px",'10px 30px']}>
      <Box>JS TIGERS</Box>
-     <Flex justifyContent={'space-between'} w={'20%'}>
+     <Flex justifyContent={'space-between'} w={['70%',"60%","40%",'20%']}>
         <Link to={'/form'}> Form</Link>
         <Link to={'/'}>Home</Link>
        {userName ?(<Link to={'/login'} onClick={()=>handleLogout()}>{userName} (Logout)</Link>):(<Link to={'/login'}>Login</Link>) } 
