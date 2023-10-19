@@ -3,7 +3,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 export const Navbar = () => {
-
   const handleLogout=()=>{
     sessionStorage.setItem('userName',JSON.stringify(""));
     window.location.href('/login')
